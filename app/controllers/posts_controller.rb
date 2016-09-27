@@ -14,6 +14,16 @@ class PostsController < ApplicationController
         @mypost = post
       end
     end
+    if @mypost == nil
+      @mypost = {id: params[:id].to_i, title: "Blog post not found!", body: ""}
+    end
+  end
+
+  def create
+    @params = params
+    @title = params["title"]
+    @author = params["author"]
+    @body = params["body"]
   end
 
   def new
@@ -36,6 +46,10 @@ class PostsController < ApplicationController
     ]
   end
 
+  private
+  def user_params
+    params.require(:post).permit(:title, :author, :body)
+  end
 
 
 end

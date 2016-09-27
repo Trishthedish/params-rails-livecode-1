@@ -1,0 +1,31 @@
+/* stylesheet */
+
+body{
+  font-family: sans-serif;
+  color: #212121;
+  background-color: #E3F3FD;
+  margin: 0;
+}
+
+header ul, footer ul{
+  list-style-type: none;
+}
+
+header li, header li{
+  display: inline-block;
+}
+
+header a:link, header a:visited{
+  text-decoration: none;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.form{
+  display: block;
+  margin-left: 1rem;
+}

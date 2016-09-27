@@ -1,2 +1,19 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>Create a Blog Post</h1>
+
+<!-- the form takes the name of the form, what action or what to do with the form after it is submitted, and  -->
+<form name="new-post" action="create" method="post">
+
+  <label class="form" for="title">Title:</label>
+  <input class="form" type="text" name="title" id="title">
+  <label class="form" for="author">Author:</label>
+  <input class="form" type="text" name="author" id="author">
+  <label class="form" for="Body">Body:</label>
+  <textarea class="form" name="body" id="body" rows="8" cols="40"></textarea> <!-- the row and cols is the minimum that the box is shown on the screen -->
+
+  <%= tag(:input, :type => "hidden",
+    :name => request_forgery_protection_token.to_s,
+    :value => form_authenticity_token) %>
+
+  <button class="form" type="submit">Submit</button>
+
+</form>
