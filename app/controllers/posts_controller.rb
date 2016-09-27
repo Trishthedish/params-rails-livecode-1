@@ -30,9 +30,16 @@ class PostsController < ApplicationController
   end
 
   def edit
+    self.show
   end
 
   def update
+    self.show
+
+    @mypost[:title] = params["title"]
+    @mypost[:author] = params["author"]
+    @mypost[:body] = params["body"]
+
   end
 
   def destroy

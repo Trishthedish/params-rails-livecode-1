@@ -12,13 +12,15 @@ Rails.application.routes.draw do
 
   get 'posts/:id/edit' => 'posts#edit', as: 'edit'
 
-  get 'posts/update'
+  put 'posts/:id/update' => 'posts#update', as:'update'
 
   get 'posts/destroy' => 'posts#destroy', as: 'destroy'
 
   delete 'posts/:id/destroy' => 'posts#destroy'
 
   post 'posts/create' => 'posts#create'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
