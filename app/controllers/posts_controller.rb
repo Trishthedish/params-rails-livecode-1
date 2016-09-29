@@ -1,32 +1,40 @@
 class PostsController < ApplicationController
   def index
-    @welcome_msg = "Hello World!"
-    @posts = PostsController.allposts
+    @posts = Post.all
   end
 
   def show
-    @posts = PostsController.allposts
-    @mypost = nil
-
-    @posts.each do |post|
-      number = params[:id].to_i
-      if post[:id] == number
-        @mypost = post
-      end
-    end
-    if @mypost == nil
-      @mypost = {id: params[:id].to_i, title: "Blog post not found!", body: ""}
-    end
+    @mypost = Post.find(params[:id].to_i)
+    # @posts = PostsController.allposts
+    # @mypost = nil
+    #
+    # @posts.each do |post|
+    #   number = params[:id].to_i
+    #   if post[:id] == number
+    #     @mypost = post
+    #   end
+    # end
+    # if @mypost == nil
+    #   @mypost = {id: params[:id].to_i, title: "Blog post not found!", body: ""}
+    # end
   end
 
   def create
     @params = params
-    @title = params["title"]
-    @author = params["author"]
-    @body = params["body"]
+
+    # @mypost = Post.new({title: params[:post][:title], author: params[:post][:author], body: params[:post][:body]})
+
+    @mypost = Post.new
+    @mypost.title = params[:post][:title]
+    @mypost.author = params[:post][:author]
+    @mypost.body = params[:post][:body]
+
+
+    @mypost.save
   end
 
   def new
+    @mypost = Post.new
   end
 
   def edit
@@ -43,6 +51,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    num = params[:id].to_i
+    Post.find(num).destroy
   end
 
   def self.allposts

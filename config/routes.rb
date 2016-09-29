@@ -14,11 +14,9 @@ Rails.application.routes.draw do
 
   put 'posts/:id/update' => 'posts#update', as:'update'
 
-  get 'posts/destroy' => 'posts#destroy', as: 'destroy'
+  delete 'posts/:id/destroy' => 'posts#destroy', as: 'destroy'
 
-  delete 'posts/:id/destroy' => 'posts#destroy'
-
-  post 'posts/create' => 'posts#create'
+  post 'posts/create' => 'posts#create', as: 'create'
 
 
 

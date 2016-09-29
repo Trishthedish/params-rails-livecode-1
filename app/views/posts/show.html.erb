@@ -4,6 +4,6 @@
   <p><%= @mypost[:body] %></p>
 
   <p><%= link_to("edit", edit_path(@mypost[:id])) %></p>
-  <p><%= link_to("Delete", destroy_path(@mypost[:id]), method: :delete) %></p>
+  <p><%= button_to "Delete", { action: "destroy", id: @mypost[:id]}, method: :delete, data: { confirm: "Are you sure?" } %></p>
 
 </article>

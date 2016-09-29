@@ -9,10 +9,11 @@
 </head>
 <body>
   <header>
+    <%= image_tag "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjbxpXotrXPAhUBzGMKHTqtBkcQjRwIBw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtntOCGkgt98&psig=AFQjCNGUChiYxXycvFNZq8DuqYyAMlslCQ&ust=1475267676286788", alt: "Kitten" %>
     <nav  class="header">
       <h1><a href="">CKC</a></h1>
       <ul>
-        <li><button><%= link_to("Home", index_path) %></button></li>
+        <li><button><%= link_to("Home", root_path) %></button></li>
         <li><button><%= link_to("New Post", new_path) %></button></li>
         <li><button><a href="">Others</a></button></li>
       </ul>
